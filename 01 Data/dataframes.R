@@ -8,13 +8,12 @@ cig_tax %>% tbl_df
 
 cig_tax %>% inner_join(smoke_free, by="STATES")
 
-View(sorted_cig %>% inner_join(sorted_smoke, by=c("YEAR", "STATES")))
+View(cig_tax %>% inner_join(smoke_free, by=c("YEAR", "STATES")))
 
-injoined <- sorted_cig %>% inner_join(sorted_smoke, by=c("YEAR", "STATES"))
+injoined <- cig_tax %>% inner_join(smoke_free, by=c("YEAR", "STATES"))
 injoined %>% mutate(tax_percent=cume_dist(CIGARETTE_TAX_DOLLAR_PER_PACK))
 mut<-injoined %>% mutate(tax_percent=cume_dist(CIGARETTE_TAX_DOLLAR_PER_PACK))
-g <- mut %>% ggplot(aes(x=YEAR, y=tax_percent))+geom_point()
-
+g <- mut %>% ggplot(aes(x=YEAR, y=tax_percent,color=STATES))+geom_point()+geom_line()
 g+ggtitle('Cigarette Tax % by State per Year')+guides(col=guide_legend(ncol=3))+labs(x='Year', y='Percent Tax on Cigarettes')+theme(axis.title.x=element_text(vjust=-0.35), axis.title.y=element_text(vjust=1.25), plot.title=element_text(vjust=1))
 
 df <- injoined %>% select(STATES, YEAR, CIGARETTE_TAX_DOLLAR_PER_PACK, TYPE_OF_RESTRICTION) %>% filter(TYPE_OF_RESTRICTION != "No law, designated areas, or separate ventilation law")
