@@ -14,6 +14,7 @@ require("jsonlite")
 require("RCurl")
 require("tidyr")
 require("ggplot2")
+require("ggthemes")
 
 source("../01 Data/dataframes.R")
 ```
