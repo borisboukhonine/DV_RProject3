@@ -3,9 +3,19 @@ title: "Project 3"
 output: html_document
 ---
 
+
+
 *Get data frames*
 ```{r, echo=TRUE}
-source("../01 Data/ dataframes.R")
+
+require("plyr")
+require("dplyr")
+require("jsonlite")
+require("RCurl")
+require("tidyr")
+require("ggplot2")
+
+source("../01 Data/dataframes.R")
 ```
 
 *Do stuff with dataframes*
