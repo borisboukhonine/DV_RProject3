@@ -6,10 +6,10 @@ output: html_document
 
 
 *Get data frames*
-```{r, echo=TRUE}
+```{r}
 source("../01 Data/package_loader.R", echo = TRUE)
 source("../01 Data/dataframes.R", echo = TRUE)
-source("../02 Data_Wrangling/datawrangling.R", echo = TRUE)
+source("../02 Data Wrangling/datawrangling.R", echo = TRUE)
 source("../03 Visualizations/visualizations.R", echo = TRUE)
 ```
 
