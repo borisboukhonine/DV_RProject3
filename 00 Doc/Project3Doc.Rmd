@@ -9,7 +9,7 @@ output: html_document
 ```{r, echo=TRUE}
 source("../01 Data/package_loader.R", echo = TRUE)
 source("../01 Data/dataframes.R", echo = TRUE)
-source("../02 Data_Wrangling/datawrangling.R", echo = TRUE)
+source("../02 Data Wrangling/datawrangling.R", echo = TRUE)
 source("../03 Visualizations/visualizations.R", echo = TRUE)
 ```
 
