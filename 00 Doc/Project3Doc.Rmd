@@ -7,16 +7,10 @@ output: html_document
 
 *Get data frames*
 ```{r, echo=TRUE}
-
-require("plyr")
-require("dplyr")
-require("jsonlite")
-require("RCurl")
-require("tidyr")
-require("ggplot2")
-require("ggthemes")
-
-source("../01 Data/dataframes.R")
+source("../01 Data/package_loader.R", echo = TRUE)
+source("../01 Data/dataframes.R", echo = TRUE)
+source("../02 Data_Wrangling/datawrangling.R", echo = TRUE)
+source("../03 Visualizations/visualizations.R", echo = TRUE)
 ```
 
 *Do stuff with dataframes*
