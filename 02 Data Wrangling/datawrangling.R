@@ -20,3 +20,4 @@ filter2 <- join3 %>% select(STATES, YEAR, CIGARETTE_TAX_DOLLAR_PER_PACK, TYPE_OF
   filter(TYPE_OF_RESTRICTION == "No law, designated areas, or separate ventilation law") %>% 
   filter(YEAR %in% c(1995, 2005, 2010))
 filter2 %>% tbl_df
+
