@@ -1,19 +1,26 @@
-myplot <- function(df9, x) {
-  names(df9) <- c("x", "n")
-  ggplot(df9, aes(x=x, y=n)) + geom_point()
+myplot <- function(df, x) {
+  names(df) <- c("x", "n")
+  ggplot(df, aes(x=x, y=n)) + geom_point()
 }
 
-categoricals <- eval(parse(text=substring(gsub(",)", ")", getURL(URLencode('http://129.152.144.84:5001/rest/native/?query="select * from smoke_free_states"'), httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_bb25684', PASS='orcl_bb25684', MODE='native_mode', MODEL='model', returnFor = 'R', returnDimensions = 'True'), verbose = TRUE)), 1, 2^31-1)))
+categoricals1 <- eval(parse(text=substring(gsub(",)", ")", getURL(URLencode('http://129.152.144.84:5001/rest/native/?query="select * from smoke_free_states"'), httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_bb25684', PASS='orcl_bb25684', MODE='native_mode', MODEL='model', returnFor = 'R', returnDimensions = 'True'), verbose = TRUE)), 1, 2^31-1)))
 # dataframe is cig_tax
+
+#### TRY THIS, IT WORKS!!!###
+l <- list()
+for (i in names(mutated1)) { 
+  if (i %in% categoricals1[[1]]) {
+    r <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="select \\\""i"\\\" from smoke_free_states"'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL',USER='C##cs329e_bb25684',PASS='orcl_bb25684',MODE='native_mode',MODEL='model',returnDimensions = 'False',returnFor = 'JSON', i=i),verbose = TRUE)))
+    r %>% tbl_df
+  }
+}
 
 
 l <- list()
 for (i in names(mutated1)) { 
-  if (i %in% categoricals[[1]]) {
-    r <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="select \\\""i"\\\", count(*) n from smoke_free_states group by \\\""i"\\\" "'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521/PDB1.usuniversi01134.oraclecloud.internal',USER='C##cs329e_bb25684',PASS='orcl_bb25684',MODE='native_mode',MODEL='model',returnDimensions = 'False',returnFor = 'JSON', i=i),verbose = TRUE)))
-    p <- myplot(r,i)
-    print(p) 
-    l[[i]] <- p
+  if (i %in% categoricals1[[1]]) {
+    r <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="select \\\""i"\\\", count(*) n from smoke_free_states"'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL',USER='C##cs329e_bb25684',PASS='orcl_bb25684',MODE='native_mode',MODEL='model',returnDimensions = 'False',returnFor = 'JSON', i=i),verbose = TRUE)))
+    r %>% tbl_df
   }
 }
 

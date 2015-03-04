@@ -10,10 +10,13 @@ output: html_document
 source("../01 Data/package_loader.R", echo = TRUE)
 source("../01 Data/dataframes.R", echo = TRUE)
 source("../02 Data Wrangling/datawrangling.R", echo = TRUE)
+<<<<<<< HEAD
 
 ```
 
 ```{r, fig.width=10,fig.height=10}
+=======
+>>>>>>> 7616557af4695e52a191d9a05c451ffd0d245b9a
 source("../03 Visualizations/visualizations.R", echo = TRUE)
 ```
 
