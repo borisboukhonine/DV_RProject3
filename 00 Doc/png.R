@@ -19,11 +19,13 @@ for (i in names(mutated1)) {
 
 png("../00 Doc/categoricals.png", width = 25, height = 10, units = "in", res = 72)
 grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 12)))   
+pushViewport(viewport(layout = grid.layout(2, 12)))   
 
 print(l[[1]], vp = viewport(layout.pos.row = 1, layout.pos.col = 1:4))
 print(l[[2]], vp = viewport(layout.pos.row = 1, layout.pos.col = 5:8))
 print(l[[3]], vp = viewport(layout.pos.row = 1, layout.pos.col = 9:12))
+print(l[[4]], vp = viewport(layout.pos.row = 2, layout.pos.col = 3:6))
+print(l[[5]], vp = viewport(layout.pos.row = 2, layout.pos.col = 7:10))
 
 dev.off()
 
