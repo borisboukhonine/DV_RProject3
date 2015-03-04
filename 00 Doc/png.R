@@ -30,7 +30,7 @@ print(l[[5]], vp = viewport(layout.pos.row = 2, layout.pos.col = 7:10))
 dev.off()
 
 
-myplot1 <- function(df, x) {
+  myplot1 <- function(df, x) {
   names(df) <- c("x")
   ggplot(df, aes(x=x)) + geom_histogram()
 }
