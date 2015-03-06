@@ -28,7 +28,7 @@ g3 <- filter2 %>% ggplot(aes(x=STATES, y=CIGARETTE_TAX_DOLLAR_PER_PACK, color=ST
   guides(col=guide_legend(nrow=8)) + 
   theme(axis.title.x=element_text(vjust=-0.35), axis.title.y=element_text(vjust=1.25), plot.title=element_text(vjust=1)) + 
   theme(axis.text.x=element_text(angle=50, size=10,vjust=0.5), axis.text.y=element_text(size=10,vjust=0.5), plot.title=element_text(vjust=1, size=25), legend.position="bottom") + 
-  labs(x='State', y='First Year of Smoking Ban') + 
+  labs(x='State', y='Cigarette Tax Per Pack in Dollars') + 
   theme(legend.title=element_text(size=17.235235235))
 g3
 
