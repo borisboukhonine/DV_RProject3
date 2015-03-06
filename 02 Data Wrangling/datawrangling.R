@@ -7,7 +7,7 @@ mutated1 %>% tbl_df
 # left join
 
 join2 <- cig_tax %>% left_join(smoke_free, by=c("YEAR", "STATES"))
-filter1 <-  join2 %>% select(STATES, YEAR, CIGARETTE_TAX_DOLLAR_PER_PACK, TYPE_OF_RESTRICTION) %>% 
+filter1 <- join2 %>% select(STATES, YEAR, CIGARETTE_TAX_DOLLAR_PER_PACK, TYPE_OF_RESTRICTION) %>% 
   filter(TYPE_OF_RESTRICTION != "No law, designated areas, or separate ventilation law")
 mutated2 <- filter1 %>% group_by(STATES) %>% 
   summarize(minyear=min(YEAR), avg_tax=mean(CIGARETTE_TAX_DOLLAR_PER_PACK))

@@ -3,26 +3,39 @@ title: "Project 3"
 output: html_document
 ---
 
+___
 
+***Get data frames***
 
-*Get data frames*
 ```{r}
-source("../01 Data/package_loader.R", echo = TRUE)
+source("../01 Data/package_loader.R", echo = FALSE)
 source("../01 Data/dataframes.R", echo = TRUE)
-source("../02 Data Wrangling/datawrangling.R", echo = TRUE)
-<<<<<<< HEAD
-
 ```
+___
+
+***Wrangle data***
+
+```{r}
+source("../02 Data Wrangling/datawrangling.R", echo = TRUE)
+```
+___
+
+***Visualize data***
 
 ```{r, fig.width=10,fig.height=10}
-=======
->>>>>>> 7616557af4695e52a191d9a05c451ffd0d245b9a
 source("../03 Visualizations/visualizations.R", echo = TRUE)
 ```
+___
 
+***Generate PNG images***
 
-*Do stuff with dataframes*
-```{r, echo=FALSE}
-
+```{r}
+# source("../00 Doc/png.R", echo = TRUE)
 ```
+___
+***Categoricals 1 PNG***
+![](./categoricals.png)
+___
 
+***Categoricals 2 PNG***
+![](./categoricals2.png)
