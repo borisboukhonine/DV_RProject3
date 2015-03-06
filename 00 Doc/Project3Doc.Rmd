@@ -3,6 +3,8 @@ title: "Project 3"
 output: html_document
 ---
 
+***The Esteemed Creators:*** *Juliette Seive, David Tran, Boris Boukhonine*
+___
 ___
 
 ***Get data frames***
